@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Myntra</title>
+    <link rel="stylesheet" href="Cart Bag.css" />
+  </head>
+  <body>
+    <button class="cart-bag" onclick="cartQuantity++
+      document.querySelector('#item-summry').innerText = `Your total Item ${cartQuantity}`;
+  "">Add to Bag</button>
+    <button class="wishlist-item" onclick="cartQuantity-=1;
+      document.querySelector('#item-summry').innerText = `Your total Item ${cartQuantity}`;
+  "">Move to wishlist</button>
+    <button class="cart-bag" onclick="cartQuantity+=2;
+      document.querySelector('#item-summry').innerText = `Your total Item ${cartQuantity}`;
+  "">Add 1+1 item</button>
+
+    <h1 id="item-summry"></h1>
+    <script>
+      let cartQuantity = 0;
+      document.querySelector("#item-summry").innerText =
+        `Your total Item ${cartQuantity}`;
+    </script>
+  </body>
+</html>
