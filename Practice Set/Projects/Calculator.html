@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calcular in JS</title>
+    <link rel="stylesheet" href="Calculator.css" />
+  </head>
+  <body>
+    <div class="calculator">
+      <input type="text" class="display" id="display" value="0" readonly />
+
+      <div class="buttons">
+        <button class="clear" onclick="clearDisplay()">AC</button>
+        <button onclick="deleteLast()">DEL</button>
+        <button onclick="appendValue('%')">%</button>
+        <button class="operator" onclick="appendValue('/')">÷</button>
+
+        <button onclick="appendValue('7')">7</button>
+        <button onclick="appendValue('8')">8</button>
+        <button onclick="appendValue('9')">9</button>
+        <button class="operator" onclick="appendValue('*')">×</button>
+
+        <button onclick="appendValue('4')">4</button>
+        <button onclick="appendValue('5')">5</button>
+        <button onclick="appendValue('6')">6</button>
+        <button class="operator" onclick="appendValue('-')">−</button>
+
+        <button onclick="appendValue('1')">1</button>
+        <button onclick="appendValue('2')">2</button>
+        <button onclick="appendValue('3')">3</button>
+        <button class="operator" onclick="appendValue('+')">+</button>
+
+        <button onclick="appendValue('0')">0</button>
+        <button onclick="appendValue('.')">.</button>
+        <button class="equal" onclick="calculate()">=</button>
+      </div>
+    </div>
+
+    <script>
+      const display = document.querySelector("#display");
+
+      function appendValue(value) {
+        if (display.value === "0" || display.value === "Error") {
+          display.value = value;
+        } else {
+          display.value += value;
+        }
+      }
+
+      function clearDisplay() {
+        display.value = "0";
+      }
+
+      function deleteLast() {
+        if (display.value.length > 1) {
+          display.value = display.value.slice(0, -1);
+        } else {
+          display.value = "0";
+        }
+      }
+
+      function calculate() {
+        try {
+          let expression = display.value;
+
+          // Percentage calculation
+          expression = expression.replace(/(\d+(?:\.\d+)?)%/g, "($1/100)");
+
+          let result = Function(`"use strict"; return (${expression})`)();
+
+          if (!Number.isFinite(result)) {
+            display.value = "Error";
+            return;
+          }
+
+          display.value = result;
+        } catch (error) {
+          display.value = "Error";
+        }
+      }
+    </script>
+  </body>
+</html>
