@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bat Ball Stump Game</title>
+
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+      }
+
+      body {
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: #f2f2f2;
+      }
+
+      .game {
+        width: 400px;
+        background: white;
+        padding: 30px;
+        border-radius: 15px;
+        text-align: center;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+      }
+
+      h1 {
+        margin-bottom: 25px;
+      }
+
+      .choices {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        margin-bottom: 25px;
+      }
+
+      button {
+        padding: 15px 20px;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        font-size: 18px;
+        background: #222;
+        color: white;
+      }
+
+      button:hover {
+        background: #444;
+      }
+
+      #result {
+        font-size: 22px;
+        font-weight: bold;
+        margin: 20px 0;
+      }
+
+      #score {
+        font-size: 18px;
+        margin-bottom: 20px;
+      }
+
+      .reset {
+        background: #d9534f;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="game">
+      <h1>Bat Ball Stump</h1>
+
+      <div class="choices">
+        <button onclick="playGame('Bat')">🏏 Bat</button>
+        <button onclick="playGame('Ball')">⚾ Ball</button>
+        <button onclick="playGame('Stump')">🪵 Stump</button>
+      </div>
+
+      <div id="result">Choose your move!</div>
+
+      <div id="score">Your Score: 0 | Computer Score: 0</div>
+
+      <button class="reset" onclick="resetGame()">Reset Game</button>
+    </div>
+
+    <script>
+      let userScore = 0;
+      let computerScore = 0;
+
+      function generateComputerChoice() {
+        let randomNumber = Math.random();
+
+        if (randomNumber < 1 / 3) {
+          return "Bat";
+        } else if (randomNumber < 2 / 3) {
+          return "Ball";
+        } else {
+          return "Stump";
+        }
+      }
+
+      function playGame(userChoice) {
+        let computerChoice = generateComputerChoice();
+
+        let result = "";
+
+        // Same choice = Tie
+        if (userChoice === computerChoice) {
+          result = "It's a Tie! 🤝";
+        }
+
+        // User wins
+        else if (
+          (userChoice === "Bat" && computerChoice === "Ball") ||
+          (userChoice === "Ball" && computerChoice === "Stump") ||
+          (userChoice === "Stump" && computerChoice === "Bat")
+        ) {
+          result = "You Win! 🎉";
+          userScore++;
+        }
+
+        // Computer wins
+        else {
+          result = "Computer Wins! 🤖";
+          computerScore++;
+        }
+
+        document.querySelector("#result").innerText =
+          `You chose ${userChoice} | Computer chose ${computerChoice}
+        \n${result}`;
+
+        document.querySelector("#score").innerText =
+          `Your Score: ${userScore} | Computer Score: ${computerScore}`;
+      }
+
+      function resetGame() {
+        userScore = 0;
+        computerScore = 0;
+
+        document.querySelector("#result").innerText = "Choose your move!";
+
+        document.querySelector("#score").innerText =
+          "Your Score: 0 | Computer Score: 0";
+      }
+    </script>
+  </body>
+</html>
