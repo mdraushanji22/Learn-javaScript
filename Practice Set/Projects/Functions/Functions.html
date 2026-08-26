@@ -45,12 +45,17 @@
 
       function determineDerive() {
         let age = 21;
+        // Validity Check
+        if (age === undefined) {
+          return "Aap Avaatar hai";
+        }
         let status;
-        if (age > 18) {
+        if (age > 180) {
           status = "you can derive";
         } else {
           status = "Use Bicycle";
         }
+        return status;
       }
       console.log(determineDerive());
     </script>
