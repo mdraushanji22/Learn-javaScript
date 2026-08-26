@@ -32,16 +32,27 @@
 
       // return function
 
-      function generateRandomMove() {
-        let random = Math.random();
-        let randomMove = random * 3;
-        return randomMove;
+      // function generateRandomMove() {
+      //   let random = Math.random();
+      //   let randomMove = random * 3;
+      //   return randomMove;
+      // }
+      // console.log(generateRandomMove());
+      // console.log(generateRandomMove());
+      // console.log(generateRandomMove());
+      // console.log(generateRandomMove());
+      // console.log(generateRandomMove());
+
+      function determineDerive() {
+        let age = 21;
+        let status;
+        if (age > 18) {
+          status = "you can derive";
+        } else {
+          status = "Use Bicycle";
+        }
       }
-      console.log(generateRandomMove());
-      console.log(generateRandomMove());
-      console.log(generateRandomMove());
-      console.log(generateRandomMove());
-      console.log(generateRandomMove());
+      console.log(determineDerive());
     </script>
   </body>
 </html>
