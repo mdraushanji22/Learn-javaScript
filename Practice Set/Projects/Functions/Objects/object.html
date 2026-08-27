@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Objects in JS</title>
+  </head>
+  <body>
+    <h1>Objecs - JavaScript</h1>
+    <script>
+      let person = {
+        fName: "Raushan",
+        lName: "Jilani",
+        age: 26,
+        fullName: function () {
+          return this.fName + " " + this.lName;
+        },
+        getAge: function () {
+          return this.age;
+        },
+      };
+      console.log(`FullName: ${person.fullName()}`);
+      // console.log(`Your age is: ${person.age}`);
+      let myAge = person.getAge();
+      console.log(`My age is: ${myAge}`);
+    </script>
+  </body>
+</html>
