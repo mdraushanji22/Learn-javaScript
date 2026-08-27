@@ -7,7 +7,7 @@
   </head>
   <body>
     <h1>Functions in JavaScript</h1>
-
+    <p id="demo"></p>
     <script>
       // let age = 21;
       // function printAge() {
@@ -63,7 +63,20 @@
         // let sum = a + b;
         return a + b;
       }
-      console.log(sum(4, 6));
+      let total = sum(4, 8);
+      total = sum(4, 8);
+      console.log(total);
+      total = sum(4, 8);
+      console.log(total);
+
+      // console.log(sum(4, 6));
+      // console.log(sum(4, -4));
+      // console.log(sum(4, 5));
+      // console.log(sum(4, -10));
+      // console.log(sum(4, 6.5));
+      document.getElementById("demo").innerHTML = `Total value is:  ${total}`;
+      document.getElementById("demo").innerHTML = `Total value is:  ${total}`;
+      document.getElementById("demo").innerHTML = `Total value is:  ${total}`;
     </script>
   </body>
 </html>
