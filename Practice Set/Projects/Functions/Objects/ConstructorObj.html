@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Constructor OBJ</title>
+  </head>
+  <body>
+    <h1>Constructor OBJ</h1>
+    <p id="demo"></p>
+    <script>
+      // Constructor function for Person objects
+      function Person(name, age, city, state) {
+        this.myName = name;
+        this.myAge = age;
+        this.myCity = city;
+        this.mySt = state;
+      }
+      let person = new Person("Raushan", 26, "Delhi", "New Delhi");
+      console.log(person.myAge);
+      console.log(person.myCity);
+      console.log(person.mySt);
+
+      document.getElementById("demo").innerHTML =
+        "My name is " + person.myName + ". My age is " + person.myAge + ".";
+    </script>
+  </body>
+</html>
