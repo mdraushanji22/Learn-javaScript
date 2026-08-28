@@ -33,6 +33,19 @@
 
       person.city = "Delhi";
       console.log(person);
+
+      let person1 = {
+        fName: "Raushan",
+        lName: "Jilani",
+        age: 26,
+        "item-name": "Banana",
+      };
+      // Destructure Objects
+      let { fName, lName, age, ["item-name"]: itemName } = person1;
+      console.log(fName);
+      console.log(lName);
+      console.log(itemName);
+      console.log(age);
     </script>
   </body>
 </html>
