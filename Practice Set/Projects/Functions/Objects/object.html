@@ -10,6 +10,7 @@
         fName: "Raushan",
         lName: "Jilani",
         age: 26,
+        "item-name": "Banana",
         fullName: function () {
           return this.fName + " " + this.lName;
         },
@@ -24,6 +25,13 @@
       console.log(person);
       console.log(person.fName);
       person.fName = "Md Raushan Jilani";
+      console.log(person);
+      console.log(person["item-name"]);
+
+      delete person["item-name"];
+      console.log(person);
+
+      person.city = "Delhi";
       console.log(person);
     </script>
   </body>

@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>nested objects</title>
+  </head>
+  <body>
+    <div>
+      <h1>Nested Objects in JS</h1>
+      <script>
+        let student = {
+          name: "Rahul",
+          college: {
+            name: "ABC College",
+            location: {
+              city: "Delhi",
+              state: "Delhi",
+              country: "India",
+            },
+          },
+        };
+
+        console.log(student.college.location.city);
+      </script>
+    </div>
+  </body>
+</html>
