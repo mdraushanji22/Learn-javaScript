@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Arrays</title>
+  </head>
+  <body>
+    <h1>Array in JS</h1>
+    <script>
+      let arr = [1, 2, 3, 4, 5, { likes: "like it" }];
+      console.log(arr);
+      //value change
+      arr[2] = 8;
+      // Object ke likes property ki value change
+      arr[5].likes = "Do you like me";
+      console.log(arr);
+      //last element remove
+      arr.pop();
+      //LAST element add
+      arr.push(10);
+      //first element remove
+      arr.shift();
+      // array starting add element
+      arr.unshift(1, 11);
+      let arr1 = [1, 2, 3, 4, 5];
+
+      let result = arr1.slice(1, 3);
+
+      result.push(100);
+
+      console.log(result);
+      console.log(arr);
+    </script>
+  </body>
+</html>
