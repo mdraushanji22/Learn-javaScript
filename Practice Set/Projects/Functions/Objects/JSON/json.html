@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JSON</title>
+  </head>
+  <body>
+    <h1>JSON IN JavaScript</h1>
+    <script>
+      let Product = {
+        name: "T-Shirt",
+        price: 799,
+        rating: {
+          stars: 4.5,
+          review: "Excellent",
+        },
+      };
+      localStorage.setItem("Product", JSON.stringify(Product));
+      localStorage.setItem("Name", "Raushan");
+      let getData = JSON.parse(localStorage.getItem("Product"));
+      console.log(getData);
+      console.log(localStorage.getItem("Name"));
+      // localStorage.clear();
+      // localStorage.removeItem("Name");
+      // console.log(Product);
+      // let str = JSON.stringify(Product);
+      // console.log(typeof str);
+      // console.log(str);
+      // let obj = JSON.parse(str);
+      // console.log(typeof obj);
+      // console.log(obj);
+    </script>
+  </body>
+</html>
