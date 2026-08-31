@@ -9,10 +9,17 @@
       let sum = function (num1, num2) {
         return num1 + num2;
       };
-      let newSum = sum(4, 6);
-      console.log(newSum);
-      console.log(sum(5, 9));
-      console.log(sum(9, 9));
+      // let newSum = sum(4, 6);
+      // console.log(newSum);
+      // console.log(sum(5, 9));
+      // console.log(sum(9, 9));
+
+      let sumThreeSum = function (num1, num2, num3, sumTwoNumbers) {
+        let sum1 = sumTwoNumbers(num1, num2);
+        return sumTwoNumbers(sum1, num3);
+      };
+      console.log(sumThreeSum(4, 5, 6, sum));
+      console.log(sum(4, 5));
     </script>
   </body>
 </html>
