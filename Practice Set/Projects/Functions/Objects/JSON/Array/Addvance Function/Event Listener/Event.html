@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Event Listener</title>
+  </head>
+  <body>
+    <h1>JavaScript Event Listener</h1>
+    <button id="btn">Click me</button>
+    <p id="message"></p>
+    <p id="date"></p>
+    <script>
+      let eventClick = document.querySelector("#btn");
+      let message = document.querySelector("#message");
+      let date = document.querySelector("#date");
+      let behaviour = function (event) {
+        // console.log("I am clicked");
+        message.innerText = "I am clicked";
+        // date.innerText = new Date();
+      };
+      eventClick.addEventListener("click", behaviour);
+      let printDate = (event) => (date.innerText = new Date());
+      eventClick.addEventListener("click", printDate);
+      // eventClick.removeEventListener("click", behaviour);
+    </script>
+  </body>
+</html>
